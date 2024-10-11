@@ -15,11 +15,17 @@ def montar_tela(titulo = 'Menu Principal', colunas = 42):
     print('|' + espacos + titulo + espacos + '|')
     print('+' + '-' * (colunas-2) + '+')
 # Função para calcular o fatorial de um número
+# 5! => 5 x 4 x 3 x 2 x 1 => 120
 def fatorial(num):
     resultado = 1.
     for i in range(num,1,-1):
         resultado *= i # resultado = resultado * i
     return resultado
+# Função fatorial recursiva
+def fatorial_rec(num):
+    if num < 0: return None
+    if num < 2: return 1
+    return num * fatorial_rec(num-1)
 # Função para retornar o mínimo e o máximo
 def min_max(vlra, vlrb, vlrc):
     return min(vlra,vlrb,vlrc), max(vlra,vlrb,vlrc)
